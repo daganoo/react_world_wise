@@ -4,5 +4,12 @@ import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+    plugins: [
+        react(),
+        eslint({
+            cache: false,
+            include: ["./src/**/*.{js,jsx,ts,tsx}"],
+            exclude: ["node_modules"],
+        }),
+    ],
 });
